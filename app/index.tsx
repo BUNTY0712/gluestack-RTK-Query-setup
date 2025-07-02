@@ -1,3 +1,4 @@
+import { Link } from 'expo-router';
 import { Box } from '~/components/ui/box';
 import { Button, ButtonText } from '~/components/ui/button';
 import { HStack } from '~/components/ui/hstack';
@@ -14,10 +15,10 @@ export default function Index() {
 			{/* Header Section */}
 			<Box className='bg-primary-500 p-6 rounded-xl mb-8 w-full max-w-md'>
 				<Text className='text-2xl font-bold text-white text-center mb-2'>
-					🎉 Gluestack UI
+					🎉 Gluestack UI + RTK Query
 				</Text>
 				<Text className='text-primary-100 text-center'>
-					Beautiful React Native Components
+					Beautiful Components with Powerful Data Fetching
 				</Text>
 			</Box>
 
@@ -37,45 +38,53 @@ export default function Index() {
 				<Box className='bg-white p-4 rounded-lg shadow-sm border border-outline-200'>
 					<HStack space='sm' className='items-center mb-2'>
 						<Text className='text-lg font-semibold text-typography-900'>
-							🎨 Customizable
+							🔄 RTK Query
 						</Text>
 					</HStack>
 					<Text className='text-typography-600 text-sm'>
-						Tailwind CSS integration for easy styling and theming
+						Powerful data fetching with caching and synchronization
 					</Text>
 				</Box>
 			</VStack>
 
-			{/* Action Buttons */}
+			{/* RTK Query Demo Buttons */}
 			<VStack space='md' className='w-full max-w-xs mt-8'>
-				<Button
-					size='lg'
-					className='bg-primary-500'
-					onPress={() => handlePress('Primary')}>
-					<ButtonText>Get Started</ButtonText>
-				</Button>
+				<Text className='text-center font-semibold text-typography-700 mb-2'>
+					RTK Query Demos
+				</Text>
 
-				<Button
-					variant='outline'
-					size='lg'
-					onPress={() => handlePress('Outline')}>
-					<ButtonText>Learn More</ButtonText>
-				</Button>
+				<Link href={'/posts' as any} asChild>
+					<Button size='lg' className='bg-primary-500'>
+						<ButtonText>📝 Posts Demo</ButtonText>
+					</Button>
+				</Link>
+
+				<Link href={'/users' as any} asChild>
+					<Button variant='solid' action='secondary' size='lg'>
+						<ButtonText>👥 Users Demo</ButtonText>
+					</Button>
+				</Link>
+			</VStack>
+
+			{/* Original Action Buttons */}
+			<VStack space='md' className='w-full max-w-xs mt-6'>
+				<Text className='text-center font-semibold text-typography-700 mb-2'>
+					UI Components
+				</Text>
 
 				<HStack space='sm' className='justify-center'>
 					<Button
-						variant='solid'
-						action='secondary'
+						variant='outline'
 						size='sm'
-						onPress={() => handlePress('Secondary')}>
+						onPress={() => handlePress('Docs')}>
 						<ButtonText>Docs</ButtonText>
 					</Button>
 
 					<Button
-						variant='solid'
+						variant='outline'
 						action='positive'
 						size='sm'
-						onPress={() => handlePress('Success')}>
+						onPress={() => handlePress('Examples')}>
 						<ButtonText>Examples</ButtonText>
 					</Button>
 				</HStack>
@@ -84,7 +93,7 @@ export default function Index() {
 			{/* Footer */}
 			<Box className='mt-auto pt-6'>
 				<Text className='text-xs text-typography-400 text-center'>
-					Edit app/index.tsx to customize this screen
+					Gluestack UI v2 + RTK Query Setup Complete! 🚀
 				</Text>
 			</Box>
 		</VStack>
